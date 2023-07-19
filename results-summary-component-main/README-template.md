@@ -36,7 +36,7 @@ The major challenge in this was to render the correct and calculate the average 
 ### Links
 
 - Solution URL: [GitHub Link](https://github.com/GaganpreetKaurGill/Newbie_Projects/tree/main/results-summary-component-main)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [Netlify URL](https://velvety-flan-ff6f6e.netlify.app/)
 
 ## My process
 
