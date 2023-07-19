@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Results summary component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main>
+    <div class="leftsection">
+      <h2>Your Result</h2>
+      <div class="circle">
+        <h1 id="averageResult"></h1>
+        <p>of 100</p>
+      </div>
+      <h1>Great</h1>
+      <p>You performance exceeds 65% of the people conducting the test here!</p>
+    </div>
+
+    <div class="rightsection">
+      <h2>Summary</h2>
+     
+      <div id="imageContainer"></div>
+
+      <script>
+            document.addEventListener("DOMContentLoaded", function () {
+            // Fetch the JSON data
+            fetch("data.json")
+                .then((response) => response.json())
+                .then((data) => {
+
+                    const totalScore = data.reduce((sum, record) => sum + record.score, 0);
+                    const averageScore = Math.round (totalScore / data.length);
+                    const averageElement = document.getElementById("averageResult");
+                    averageElement.textContent = averageScore;
+            
+                    // Create and display image elements from JSON
+                    const imageContainer = document.getElementById("imageContainer");
+                    for (const record of data) {
+                        const figureElement = document.createElement("figure");
+
+                        // Use the "name" property as a CSS class
+                        figureElement.classList.add(record.category); // Remove spaces from name for valid class name
+
+
+                        // Create and set image element
+                        const imgElement = document.createElement("img");
+                        imgElement.src = record.icon;
+                        imgElement.alt = "Icon Image";
+                        figureElement.appendChild(imgElement);
+
+                        // Create and set figcaption element
+                        const figcaptionElement = document.createElement("figcaption");
+                        figcaptionElement.textContent = record.category;
+                        figureElement.appendChild(figcaptionElement);
+
+                        // Create and set paragraph element
+                        const paragraphElement = document.createElement("p");
+                        paragraphElement.textContent = record.score;
+                        figureElement.appendChild(paragraphElement);
+
+                        const spanElement = document.createElement("span");
+                        spanElement.textContent = " / 100";
+                        
+                        paragraphElement.appendChild(spanElement);
+
+                        // Append the figure to the container
+                        imageContainer.appendChild(figureElement);  
+                    }
+                        })
+                .catch((error) => console.error("Error fetching data:", error));
+            });
+      </script>
+      
+
+      <button>
+        Continue
+      </button>
+      
+    </div>
+
+  </main>
+
+  
+    <footer class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+        Coded by <a href="#">Gaganpreet Kaur</a>.
+    </footer>
+    
+</body>
+</html>

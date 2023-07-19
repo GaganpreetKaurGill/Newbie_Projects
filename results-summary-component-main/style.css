@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk&display=swap');
+
+:root{
+    --body-bg-color: rgb(235, 241, 255);
+    --main-bg-color: hsl(0, 0%, 100%);
+
+    /* gradient background color */
+    --div-bg-color1: hsl(252, 100%, 67%);
+    --div-bg-color2: hsl(241, 81%, 54%);
+
+    --circle-bg-color1: hsla(256, 72%, 46%, 1);
+    --circle-bg-color2: hsla(241, 72%, 46%, 0);
+
+    /* text colour */
+    --text-colour: hsl(241, 100%, 89%);
+    --text-colour2: hsl(0, 0%, 100%);
+
+    /* right section */
+    --right-text-colour: hsl(224, 30%, 27%);
+    --reaction-text: hsl(0, 100%, 67%, 1);
+    --reaction-background:  hsl(6, 100%, 98%);
+
+    --memory-text-colour: hsl(39, 100%, 56%);
+    --memory-bg-colour: hsl(42, 100%, 97%);
+
+    --verbal-text-colour: hsl(166, 100%, 37%);
+    --verbal-bg-colour: hsl(173, 53%, 97%);
+
+    --visual-text-colour: hsl(234, 85%, 45%);
+    --visual-bg-colour: hsl(240, 71%, 97%);
+}
+
+body{
+    min-height: 100vh;
+    margin:0;
+    font-family: 'Hanken Grotesk', sans-serif;
+    background-color:  var(--body-bg-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }   
+
+main{
+    width: 375px;
+    height: 809px;
+    background-color: var(--body-bg-color);
+    border-radius: 32px;
+    box-shadow: 0px 30px 60px 0px hsla(224, 82%, 58%, 0.15);
+    display: flex;
+    flex-direction: column;
+}
+
+.leftsection{ 
+    width: 375px;
+    height: 356px;
+    margin:0;
+    padding:0;
+    border-bottom-left-radius: 32px;
+    border-bottom-right-radius: 32px;
+    background-image: linear-gradient(180deg, var(--div-bg-color1), var(--div-bg-color2) );
+    text-align: center;
+}
+.leftsection h2{
+    margin: 0;
+    font-size: 18px;
+    padding-top: 24px;
+    color: var(--text-colour);  
+}
+
+.leftsection .circle{
+    background: radial-gradient(var(--circle-bg-color1), var(--circle-bg-color2));
+    margin:24px 117px 24px 118px;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+}
+
+.leftsection .circle h1{
+    padding: 25px 39px 0 38px;
+    font-size: 54px;
+    font-weight: 800;
+    line-height: 72px;
+    color: var(--text-colour2);
+    margin-bottom: 0;  
+}
+
+.leftsection .circle p{
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    color: var(--text-colour);
+    opacity: 0.5;
+}
+
+.leftsection h1{
+    color: var(--text-colour2);
+    font-size: 24px;
+    margin:0;
+}
+
+.leftsection p{
+    margin-top: 8px;
+    padding-inline: 58px;
+    font-size: 16px;
+    color: var(--text-colour);
+}
+
+.rightsection{
+    padding-left: 32px;
+}
+
+.rightsection h2{
+    margin-top: 24px;
+    margin-bottom: 24px;
+    color: var(--right-text-colour);  
+}
+
+.rightsection figure{
+    width: 315px;
+    height: 56px;
+    border-radius: 12px;
+    margin:0 0 16px 0;
+    display: flex;
+}
+
+
+.rightsection img{
+    padding: 18px 12px 18px 16px;
+}
+
+.rightsection figcaption{
+    padding-top: 17px;
+    font-size: 18px;
+}
+
+.rightsection figure p{
+    margin-left: auto;
+    padding-right: 16px;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--right-text-colour);
+}
+
+.rightsection figure p span{
+    opacity: 0.5;
+}
+
+.Reaction{
+    background: var(--reaction-background);
+    color: var(--reaction-text);
+}
+
+.Memory{
+    background: var(--memory-bg-colour);
+    color: var(--memory-text-colour);
+}
+
+.Verbal{
+    background: var(--verbal-bg-colour);
+    color: var(--verbal-text-colour);
+}
+
+.Visual{
+    background: var(--visual-bg-colour);
+    color: var(--visual-text-colour);
+}
+
+.rightsection button{
+    text-align: center;
+    background-color: var(--right-text-colour);
+    color: var(--text-colour2);
+    margin-top: 24px;
+    width: 315px;
+    height: 56px;
+    border-radius: 128px;
+    font-size: 18px;
+    border: 0;  
+}
+
+button:hover, button:active{
+    background-color: var(--div-bg-color2);
+    cursor: pointer;
+}
+
+footer{
+    margin-top: 16px;
+}
+
+@media only screen and (min-width: 1024px) {
+    main{
+        width: 736px;
+        height: 512px;
+        background-color: var(--main-bg-color);
+        display: flex;
+        flex-direction: row;
+    }
+    .leftsection{ 
+        max-width: 368px;
+        height: 512px;
+        border-radius: 32px;
+    }
+
+    .leftsection h2{
+        font-size: 24px;
+        padding-top: 38px; 
+    }
+
+    .leftsection .circle{
+        margin:35px 84px 28px 84px;
+        width: 200px;
+        height: 200px;
+    }
+
+    .leftsection .circle h1{
+        padding-top: 55px;
+        font-size: 72px;
+    }
+
+    .leftsection .circle p{
+        font-size: 18px;
+    }
+
+    .leftsection h1{
+        font-size: 32px;
+    }
+
+    .leftsection p{
+        margin-top: 14px;
+        padding-inline: 54px;
+        font-size: 18px;
+    }
+
+    .rightsection{
+        padding-left: 40px;
+    }
+
+    .rightsection h2{
+        margin-top: 38px;
+        margin-bottom: 28px;
+    }
+
+    .rightsection figure{
+        width: 288px;
+    }
+
+    .rightsection button{
+        width: 288px; 
+    }
+
+    footer{
+        margin-top: 0px;
+    }
+    
+}
+
+
+
