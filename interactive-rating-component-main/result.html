@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Interactive rating component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- This is the main class to display the rating selected by the user in main page. -->
+    <!-- Here, the class "result_main" is assigned to the main element to distinguish main from the index.html and result.html-->
+    <!-- In script.css, the properties for result page is assigned using the class "result_main".-->
+    <main class="result_main">
+        <img src="./images/illustration-thank-you.svg" alt="Thank You Illustration">
+
+        <!-- the span element will be inserted with value using script and display the value selected by the user -->
+        <div>
+            <p class="output">You selected <span id="selectedItem"></span> out of 5</p>
+        </div>
+        
+        <h1>Thank You!</h1>
+        <p class="line">We appreciate you taking the time to give a rating. If you ever need more support, don’t hesitate to get in touch!</p>
+    </main>
+    
+    <!-- The javascript code is used to load the content from index and display it on current page. -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+
+            // In script.js, we passed the value of encodeText to the selected. The selected is now assigned to selectedText.
+            const selectedText = params.get('selected');
+
+            const selectedItemElement = document.getElementById('selectedItem');
+
+            // The following if-else statements will check if the selectedText contains the textContent or not.
+            if (selectedText) {
+
+                // If true, the textContent will be displayed in the span having id = selectedItem
+                selectedItemElement.textContent = decodeURIComponent(selectedText);
+            } else {
+                selectedItemElement.textContent = 'No selected text found.';
+                console.error('No selected text found in the URL.');
+            }
+        });  
+    </script>
+
+    <footer>
+        <div class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+        Coded by <a href="#">Gaganpreet Kaur</a>.
+        </div>
+    </footer>
+</body>
+</html>
