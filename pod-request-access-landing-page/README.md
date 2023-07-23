@@ -47,8 +47,8 @@ Users should be able to:
 
 ### Links
 
-- GitHub URL: [GitHub URL](https://your-solution-url.com)
-- Live Site URL: [Live Site UR](https://your-live-site-url.com)
+- GitHub URL: [GitHub URL](https://github.com/GaganpreetKaurGill/Newbie_Projects/tree/main/pod-request-access-landing-page)
+- Live Site URL: [Netlify UR](https://curious-croquembouche-48de86.netlify.app)
 
 ## My process
 For this solution, I started by creating the logic first and then started designing the solution. If the logic is completed successfully, it is easier to give the design to it. 
