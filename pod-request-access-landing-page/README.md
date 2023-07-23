@@ -33,15 +33,19 @@ Users should be able to:
 ### Screenshot
 
 **Desktop View**
+
 ![Desktop View](./screenshots/desktop.png)
 
 **Desktop Interactive State View**
+
 ![Desktop Interactive State View](./screenshots/desktop-interactive-state.png)
 
 **Tablet View**
+
 ![Tablet View](./screenshots/tablet.png)
 
 **Mobile View**
+
 ![Mobile View](./screenshots/mobile.png)
 
 
