@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Pod request access landing page</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<!-- The class bgImg is used to include the "host image" using pseudo element. -->
+<!-- onload focus() is used to change the style of the input when focused. -->
+<body class="bgImg" onload="document.form1.email.focus()">
+  <main>
+    <div class="logo">
+      <img src="./assets/desktop/logo.svg" alt="Logo" >
+    </div>
+
+    <div class="content">
+      <h1>Publish your podcasts <span>everywhere.</span></h1>
+
+      <p>
+        Upload your audio to Pod with a single click. We’ll then distribute your podcast to Spotify, Apple Podcasts, Google Podcasts, Pocket Casts and more!
+      </p>
+
+      <!-- Div is used to display list of options as formatting is easier when we use div as flexbox. -->
+      <div class="options">
+        <img src="./assets/desktop/spotify.svg" alt="Spotify" class="spotify">
+        <img src="./assets/desktop/apple-podcast.svg" alt="Apple Podcast" class="apple">
+        <img src="./assets/desktop/google-podcasts.svg" alt="Google Podcast" class="google">
+        <img src="./assets/desktop/pocket-casts.svg" alt="Podcast Casts" class="cast">
+      </div>
+
+      <form id="emailForm" name="form1" action="#" autocomplete="off">
+        <input type="text" name="email" id="email" placeholder="Email address">
+
+        <!-- The validateEmail function is called when clicking the function and "email" is passed as an argument in JavaScript file. -->
+        <button type="submit" value="Submit" onclick="validateEmail(document.form1.email)">Request Access</button>
+      </form>
+
+      <!-- The following div is used to display the message sent by JS file. -->
+      <div id="message"></div>
+      <script src="script.js"></script>
+    </div>
+    
+    
+  </main>
+  
+  <div id="img">
+    <img src="./assets/desktop/bg-pattern-dots.svg" alt="Dots Pattern">
+  </div>
+  
+</body>
+</html>
